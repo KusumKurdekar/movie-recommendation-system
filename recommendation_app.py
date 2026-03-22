@@ -29,8 +29,7 @@ st.title("Movie Recommendation System")
 st.write("Type a movie you like and get recommendations!")
 
 movie_input = st.selectbox("Select a movie:", movies['title'].tolist())
-num_recs = st.slider("Number of recommendations:", 1, 20, 5)
-
+num_recs = st.slider("Number of recommendations:", 1, 20, value=5, key=movie_input)
 if st.button("Recommend"):
     recommendations = recommend_movies(movie_input, num_recs)
     st.write("Because you liked **{}**, you might also like:".format(movie_input))
