@@ -23,7 +23,7 @@ def recommend_movies(movie_name, n=5):
         return []
     similar_movies = movie_similarity_df[movie_name].sort_values(ascending=False)
     recommended = similar_movies.drop(movie_name).head(n)
-    return recommended
+return recommended.index.tolist()
 
 # Test recommendations
 favorite_movie = "Sabrina (1995)"
